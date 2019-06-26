@@ -14,7 +14,8 @@ def extend_boxes(boxes, d1, d2, parents, return_only_new=False):
     new_boxes = []
     for i in range(boxes.shape[0]):
         class_name = d1[boxes[i][0]]
-        print(parents.keys())
+        # print(parents.keys())
+        print(class_name)
         for p in parents[class_name]:
             if p in d2:
                 new_boxes.append(np.array([d2[p]] + list(boxes[i][1:])))
