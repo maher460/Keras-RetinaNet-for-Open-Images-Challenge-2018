@@ -25,7 +25,7 @@ if platform.processor() == 'Intel64 Family 6 Model 79 Stepping 1, GenuineIntel':
 else:
     DATASET_PATH = 'D:/Projects/2018_07_Google_Open_Images/input/'
 
-ROOT_PATH = os.path.dirname(os.path.dirname(os.path.realpath(__file__))) + '/'
+ROOT_PATH = os.path.dirname(os.path.realpath(__file__)) + '/'
 INPUT_PATH = ROOT_PATH + 'input/'
 OUTPUT_PATH = ROOT_PATH + 'output/'
 MODELS_PATH = ROOT_PATH + 'models/'
