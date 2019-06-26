@@ -4,7 +4,7 @@ __author__ = 'ZFTurbo: https://kaggle.com/zfturbo'
 
 if __name__ == '__main__':
     import os
-    gpu_use = 0
+    gpu_use = 2
     print('GPU use: {}'.format(gpu_use))
     os.environ["KERAS_BACKEND"] = "tensorflow"
     os.environ["CUDA_VISIBLE_DEVICES"] = "{}".format(gpu_use)
