@@ -174,7 +174,8 @@ if __name__ == '__main__':
     type = 'avg'
 
     # files_to_process = glob.glob(INPUT_PATH + 'kaggle/challenge2018_test/*.jpg')
-    files_to_process = glob.glob(DATASET_PATH + 'validation_big/*.jpg')
+    # files_to_process = glob.glob(DATASET_PATH + 'validation_big/*.jpg')
+    files_to_process = glob.glob('/afs/cs/projects/kovashka/maher/vol3/ad_images/*.jpg')
 
     if 0:
         backbone = 'resnet101'
