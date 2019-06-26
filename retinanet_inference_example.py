@@ -183,7 +183,7 @@ if __name__ == '__main__':
 
     if 1:
         backbone = 'resnet152'
-        pretrained_model_path = MODELS_PATH + 'retinanet_resnet152_level_1_converted.h5'
+        pretrained_model_path = MODELS_PATH + 'retinanet_resnet152_level_1_v1.2_converted.h5'
         labels_list = LEVEL_1_LABELS
 
     output_cache_directory = OUTPUT_PATH + 'cache_retinanet_level_1_{}/'.format(backbone)
