@@ -75,11 +75,13 @@ def get_retinanet_predictions_for_files(files, out_dir, pretrained_model_path, b
 
         # process image
         start = time.time()
+        print("\n\nBLABLABLA 1 ")
         print('ID: {} Image shape: {} Scale: {}'.format(id, image.shape, scale))
         boxes, scores, labels = model.predict_on_batch(image)
         # TODO: Extract and save the features here...
         print('Detections shape: {} {} {}'.format(boxes.shape, scores.shape, labels.shape))
         print("Processing time: {:.2f} sec".format(time.time() - start))
+        print("BLABLABLA 1\n\n")
 
         if show_debug_images:
             if show_mirror_predictions:
