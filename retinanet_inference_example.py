@@ -49,7 +49,7 @@ def get_retinanet_predictions_for_files(files, out_dir, pretrained_model_path, b
     
     print('Proc {} files...'.format(len(files)))
     for f in files:
-        print("\n\nBLABLABLA 0\n\n")
+        # print("\n\nBLABLABLA 0\n\n")
         id = os.path.basename(f)[:-4]
 
         cache_path = out_dir + id + '.pkl'
@@ -76,13 +76,13 @@ def get_retinanet_predictions_for_files(files, out_dir, pretrained_model_path, b
 
         # process image
         start = time.time()
-        print("\n\nBLABLABLA 1 ")
+        # print("\n\nBLABLABLA 1 ")
         print('ID: {} Image shape: {} Scale: {}'.format(id, image.shape, scale))
         boxes, scores, labels = model.predict_on_batch(image)
         # TODO: Extract and save the features here...
         print('Detections shape: {} {} {}'.format(boxes.shape, scores.shape, labels.shape))
         print("Processing time: {:.2f} sec".format(time.time() - start))
-        print("BLABLABLA 1\n\n")
+        # print("BLABLABLA 1\n\n")
 
         if show_debug_images:
             if show_mirror_predictions:
@@ -112,6 +112,8 @@ def create_csv_for_retinanet(input_dir, out_file, label_arr, skip_box_thr=0.05, 
     for f in files:
         id = os.path.basename(f)[:-4]
         boxes, scores, labels = load_from_file_fast(f)
+        #MAHER
+        print('Detections shape: {} {} {}'.format(boxes.shape, scores.shape, labels.shape))
         filtered_boxes = filter_boxes(boxes, scores, labels, skip_box_thr)
         merged_boxes = merge_all_boxes_for_image(filtered_boxes, intersection_thr, type)
         print(id, len(filtered_boxes[0]), len(filtered_boxes[1]), len(merged_boxes))
