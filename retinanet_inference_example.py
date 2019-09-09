@@ -43,6 +43,10 @@ def get_retinanet_predictions_for_files(files, out_dir, pretrained_model_path, b
     show_mirror_predictions = False
 
     model = models.load_model(pretrained_model_path, backbone_name=backbone)
+
+    # TODO: Get features here! Remove the last layer probably
+    model.summary()
+    
     print('Proc {} files...'.format(len(files)))
     for f in files:
         id = os.path.basename(f)[:-4]
@@ -73,6 +77,7 @@ def get_retinanet_predictions_for_files(files, out_dir, pretrained_model_path, b
         start = time.time()
         print('ID: {} Image shape: {} Scale: {}'.format(id, image.shape, scale))
         boxes, scores, labels = model.predict_on_batch(image)
+        # TODO: Extract and save the features here...
         print('Detections shape: {} {} {}'.format(boxes.shape, scores.shape, labels.shape))
         print("Processing time: {:.2f} sec".format(time.time() - start))
 
