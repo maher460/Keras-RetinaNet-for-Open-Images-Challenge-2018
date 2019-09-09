@@ -49,6 +49,7 @@ def get_retinanet_predictions_for_files(files, out_dir, pretrained_model_path, b
     
     print('Proc {} files...'.format(len(files)))
     for f in files:
+        print("\n\nBLABLABLA 0\n\n")
         id = os.path.basename(f)[:-4]
 
         cache_path = out_dir + id + '.pkl'
